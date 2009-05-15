@@ -8,6 +8,7 @@ and a front "wrapper" for it. (vruby)
 
 
 To install it, it appears you'll need ruby 1.9, then go into vrwsin/swin, ruby extconf.rb, make, make install
+(how to install ruby 1.9 windows mingw: http://programming-gone-awry.blogspot.com/2009/05/ruby-19-one-click-installer.html)
 
 with ruby 1.8.6 you might be able to download previous version of vrswin and it will install.
 
