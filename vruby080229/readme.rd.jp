@@ -1,0 +1,89 @@
+=begin
+= VisualuRuby計画（仮称） ドキュメント
+NISHIKAWA Yasuhiro <nyasu@osk.3web.ne.jp>
+
+== かいつまんでいうと
+Readmeに書くようなことはホームページ上に書いてますので、そちらを読んで下さい。
+http://www.threeweb.ad.jp/~nyasu/software/vrproject.html
+ライセンス事項はRubyと同じ物とします。
+
+== インストール方法
++ swin.so作成
+ソースからswin.soを作る場合は、ruby本体のソースを入手して、正しく
+configure、makeして下さい。ヘッダファイルやインストール用のスクリプトが
+設定されます。
+
+で、swin.soを作成、インストールするには
+  ruby extconf.rb
+  make
+  make site-install
+
++ swin.soのバイナリを取得している場合
+適切なディレクトリにswin.soを置いて下さい。
+どのディレクトリが良いかを調べるには、 
+  ruby -e'p $:' 
+というコマンドラインを叩いてみて下さい。
+
++ ruby側ライブラリのインストール
+ライブラリはvrディレクトリに入っています。
+これまた適当なディレクトリにディレクトリごと放り込んで下さい。
+vrinstall.rbというインストールスクリプトも用意してみました。
+
+== Simple sample of swin
+ボタンから送られるWM_COMMANDを捉える例
+
+  require 'swin'
+  
+  WM_COMMAND        = 0x00000111
+  WS_VISIBLECHILD   = 0x50000000
+  BS_PUSHBUTTON     = 0x00000000
+  
+  RFactory=SWin::LWFactory.new(SWin::Application.hInstance)
+  
+  mw=RFactory.newwindow(nil)
+  mw.caption="Window Caption"
+  mw.move(300,200,400,400)
+  mw.create
+  
+  bn=RFactory.newwindow(mw)
+  bn.classname="BUTTON"
+  bn.caption="Button1"
+  bn.etc=1234
+  bn.style=WS_VISIBLECHILD | BS_PUSHBUTTON
+  bn.move 80,50,80,40
+  bn.create
+  
+  mw.addEvent WM_COMMAND
+  
+  def mw.msghandler(msg)  #msg has attrs of hWnd,msg,wParam,lParam
+    if msg.msg==WM_COMMAND then
+      messageBox "Button Pushed"
+    end
+  end
+  
+  mw.show
+  SWin::Application.messageloop
+
+== Simple sample of vruby
+swin.soの例と同じことをします。
+
+  require 'vruby'
+  require 'vrcontrol'
+  
+  class MyForm <VRForm
+    def construct
+      self.caption="Window Caption"
+      self.move(300,200,400,400)
+      addControl(VRButton,"btn1","Button1",80,50,80,40)
+    end
+    
+    def btn1_clicked
+      messageBox "Button Pushed"
+    end
+  end
+
+  VRLocalScreen.showForm(MyForm)
+  VRLocalScreen.messageloop
+
+
+=end

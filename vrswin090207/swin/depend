@@ -1,0 +1,11 @@
+swin.o : swin.c swin.h
+swinwin.o:  swinwin.c swin.h
+swingdi.o : swingdi.c swin.h swingdi.h
+swinbmp.o : swinbmp.c swin.h
+swincdlg.o: swincdlg.c swin.h
+swinmenu.o: swinmenu.c swin.h
+swincvs.o : swincvs.c swin.h swingdi.h
+swindialog.o : swindialog.c swin.h
+swinrsc.o : swinrsc.c swin.h
+swinprn.o : swinprn.c swin.h
+larray.o  : larray.c larray.h

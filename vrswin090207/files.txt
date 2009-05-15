@@ -1,0 +1,116 @@
+ == VisualuRuby(tmp-name) Files ==
+
+VisualuRuby(tmp-name) project is composed of 2 archives.
+
+
+Index:
+  1. Files in the archive of swin
+  2. Files in the archive of VisualuRuby(tmp-name)
+
+1. SWin Files
+
+  Files.txt
+    This file.
+  Files.swin
+    Just a tag file.
+  readme.txt
+    Readme document
+  extconf.rb
+    run "ruby extconf.rb" to make Makefile
+  swin.h
+    C header of ruby extension library 'swin.so' 
+  swin.c
+      C source of ruby extension library 'swin.so' (core)
+  swinwin.c
+      C source of ruby extension library 'swin.so' (about Window)
+  swingdi.c
+    C source of ruby extension library 'swin.so' (about GDI)
+  swinbmp.c
+    C source of ruby extension library 'swin.so' (about BMP)
+  swinmenu.c
+    C source of ruby extension library 'swin.so' (about menu)
+  swincdlg.c
+    C source of ruby extension library 'swin.so' (about common dialogs)
+  swincvs.c
+    C source of ruby extension library 'swin.so' (about drawable bmp)
+  swinrsc.c
+    C source of ruby extension library 'swin.so' (about font and so on)
+  swindialog.c
+    C source of ruby extension library 'swin.so' (about modal dialogs)
+  swinprn.c
+    C source of ruby extension library 'swin.so' (about printer)
+  tests\test.rb
+    A test script for swin.so of main functions
+  tests\test2.rb
+    A test script for swin.so of gdi functions
+  tests\test3.rb
+    A test script for swin.so using common controls.
+  tests\test4.rb
+    A test script for swin.so loading and displaying bitmap files.
+  tests\test5.rb
+    A test script for swin.so using menues.
+
+
+2. VisualuRuby(tmp-name) Files
+
+  Files.txt
+    This file.
+  Files.vruby
+    Just a tag file.
+  readme.rd.txt
+    Readme document
+  vr/winconst.rb
+    Ruby script to define Windows' constants.
+  vr/sysmod.rb
+    Ruby script of Window's functions.
+  vr/rscutil.rb
+    Ruby script for Windows' resources.
+  vr/vruby.rb
+    This project's main Ruby library
+  vr/vrcontrol.rb
+    Ruby script library for Windows' standard controls
+  vr/vrlayout.rb
+    Ruby script library for layout managers
+  vr/vrlayout2.rb
+    Ruby script library for layout frames
+  vr/vrcomctl.rb
+    Ruby script library for common controls
+  vr/vrmmedia.rb
+    Ruby script library for multimedia viewer
+  vr/vrtwopane.rb
+    Ruby script library for window devided into 2 panes.
+  vr/vrddrop.rb
+    Ruby script library for drag&drop (currently file dropping only)
+  vr/vrtimer.rb
+    Ruby script library for timer
+  vr/vrhandler.rb
+    Ruby script library for some windows' messages.
+  vr/vrowndraw.rb
+    Ruby script library for owner-draw-controls
+  vr/vrdde.rb
+    Ruby script library for DDE
+  vr/vrdialog.rb
+    Ruby script library for modal dialogs.
+  vr/vrrichedit.rb
+    Ruby script library for richedit control.
+  vr/vrtooltip.rb
+    Ruby script library for tooltip control.
+  vr/vrlayout2.rb
+    Ruby script library for layout frame.
+  vr/vrlayout.old.rb
+    Old script of layout manager
+  vr/compat/*
+    Scripts for backward compatibility.
+  vr/rubycompat.rb
+    Absorbing ruby's imcompatibility between its version
+  vr/contrib/toolbar.rb
+    Ruby script library for toolbar.
+  vr/contrib/inifile.rb
+    Ruby script library to access ini files.
+  vr/contrib/vrctlcolor.rb
+    Ruby script library to handle WM_CTLCOLOR.
+  tests\sample.rb
+    VisualuRuby's sample script coded in singleton method style.
+  tests\sample2.rb
+    VisualuRuby's sample script coded in module definition style 
+    (same function with sample.rb)
