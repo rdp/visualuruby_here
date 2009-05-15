@@ -7,7 +7,7 @@ BACKSCREEN_TITLE = "VisualuRuby (vruby part)   Installer"
 
 require 'rbconfig'
 require 'Win32API'
-require 'ftools'
+require 'fileutils'
 
 MessageBox = Win32API.new("user32","MessageBoxA",["I","P","P","I"],"I")
 def ErrorMessage(msg)
@@ -33,7 +33,7 @@ class Installer
 
   def copyfile(src,dst)
 #    @installcommands.push "filecopy '#{src}','#{dst}'"
-    @installcommands.push "File.cp '#{src}',\t'#{dst}'"
+    @installcommands.push "FileUtils.cp '#{src}',\t'#{dst}'"
   end
 
   def copydir(srcdir,dstdir)  # need dstdir existence
@@ -70,6 +70,10 @@ class Installer
   def examine
     targetdir = File.join(CONFIG['sitedir'],
                         "#{CONFIG['MAJOR']}.#{CONFIG['MINOR']}")
+    if RUBY_VERSION >= "1.9"
+      # 1.9 is more specific
+      targetdir += ".#{CONFIG['TEENY']}"
+    end
     vrubydir =  File.join(targetdir,'vr')
     @systeminfo.push ["ruby version",RUBY_VERSION]
     @systeminfo.push ["ruby platform",RUBY_PLATFORM]
@@ -82,11 +86,7 @@ class Installer
 #    @installcommands.push "Dir.mkdir('#{vrubydir}')" unless vralready
 
     # files to be installed
-    if File.directory?("./vr") then
-      copydir('./vr',vrubydir) # old 
-    else
-      copydir('./lib',targetdir) # new
-    end
+    copydir('./lib', targetdir)
 
     # DLLManager required?  ruby before 1.4.3 needs it
     rubyver="#{CONFIG['MAJOR']}.#{CONFIG['MINOR']}.#{CONFIG['TEENY']}"
@@ -232,7 +232,6 @@ module InstallerDialog
     @pg.setRange 0,100
     Thread.abort_on_exception =true    # Thanks to arton
     Thread.new {
-      Thread.critical=true
       @installer.install! do |cmd,progress,err|
         @pg.position = progress
         if err then
@@ -241,7 +240,6 @@ module InstallerDialog
       end
       messageBox "Install FINISHED","installer",MB_TOPMOST
       self.close 0
-      Thread.critical=false
     }
   end
 
