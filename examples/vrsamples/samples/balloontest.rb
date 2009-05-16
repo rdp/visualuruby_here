@@ -21,7 +21,7 @@ module MyForm
     @none= addControl(VRRadiobutton, 'none_rb', 'No icon')
     addControl(VRButton, 'show', 'Show balloon')
     addControl(VRButton, 'exit', 'Exit')
-    create_trayicon(INFO_ICON, 'VRuby Balloon Tooltip Test') # last parameter is the tooltip. see traytest.rb
+    create_trayicon(INFO_ICON, 'VRuby Balloon Tray Test') # last parameter is the tooltip. see traytest.rb
   end
 
   def exit_clicked

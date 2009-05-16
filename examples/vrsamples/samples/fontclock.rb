@@ -1,3 +1,4 @@
+# requires run via: ruby -Ks
 require 'vr/vruby'
 require 'vr/vrcontrol'
 require 'vr/vrtimer'
