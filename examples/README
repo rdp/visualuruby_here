@@ -1,0 +1,11 @@
+readme_samples/ are the two samples from the readme file.
+
+vrsamples/ are downloaded from http://www.osk.3web.ne.jp/~nyasu/vruby/vrproject-e.html#sss (http://www.osk.3web.ne.jp/~nyasu/vruby/vrsamples.zip)
+
+The english sample descriptions for them seem to be:
+http://www.osk.3web.ne.jp/~nyasu/vruby/samples-e.html
+
+It also  notes:
+"Some scripts file include SJIS-coded Japanese Text. Use -Ks option for ruby." (necessary for some scripts)
+
+There appear to be links to more scripts at http://www.osk.3web.ne.jp/~nyasu/vruby/vrproject-e.html#sss

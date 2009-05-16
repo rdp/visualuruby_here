@@ -1,8 +1,9 @@
 These are sample script for VisualuRuby Project(temp-name).
-You needed VisualuRubyProject's archives to examine them.
+You need VisualuRubyProject's archives to examine them.
 See http://www.threeweb.ad.jp/~nyasu/software/vrproject.html .
 (Download page is at http://www.threeweb.ad.jp/~nyasu/vruby/vruby/core.html)
-I'm sorry that NO english pages are available now.
+
+See ../../README if things crash
 
 FILES:
 margintest.rb
