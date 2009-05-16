@@ -21,7 +21,8 @@ This modules is included to create/delete/modify tray icons.
     Creates new trayicon in the tasktray.((|icon|)) is hIcon of the trayicon and
     the trayicon has tooltip text ((|tiptext|)).
     When argument ((|icon|)) is nil, icon will set as DEFAULTICON.
-    To distinguish multiple trayicon, ((|icon_id|)) information is added to it.
+    To distinguish multiple trayicon, ((|icon_id|)) information is added to it (you pass this in so that
+    later calls to xxxx_trayicon know which trayicon to work against).
 --- delete_trayicon(icon_id=0)
     Deletes the trayicon specified by ((|icon_id|))
 --- modify_trayicon(hicon,tiptext,iconid=0)

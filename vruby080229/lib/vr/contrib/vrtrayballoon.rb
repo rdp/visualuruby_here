@@ -26,6 +26,9 @@ module VRTrayiconFeasible
   NIN_BALLOONTIMEOUT   = WMsg::WM_USER + 4
   NIN_BALLOONUSERCLICK = WMsg::WM_USER + 5
 
+  # this method allows you to create a tray tip balloon for an tray icon
+  # appears that tray tip balloons can only have one of a few icons associated (NIIF_xxx)
+  # hicon?? 
   def modify_trayicon5(hicon,infotitle,infotext,infoicon=NIIF_NONE,
                        infotimeout=20000,iconid=0)
     flag = NIF_INFO

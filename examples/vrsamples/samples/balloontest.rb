@@ -21,7 +21,7 @@ module MyForm
     @none= addControl(VRRadiobutton, 'none_rb', 'No icon')
     addControl(VRButton, 'show', 'Show balloon')
     addControl(VRButton, 'exit', 'Exit')
-    create_trayicon(INFO_ICON, 'VRuby Balloon Tooltip Test')
+    create_trayicon(INFO_ICON, 'VRuby Balloon Tooltip Test') # last parameter is the tooltip. see traytest.rb
   end
 
   def exit_clicked
@@ -46,8 +46,10 @@ module MyForm
   end
 
   def show_clicked
-    infoicon= [:info, :warning, :error, :none].inject(NIIF_INFO) do |icon, which|
+    # check which radio button is checked, get its appropriate icon
+    infoicon = [:info, :warning, :error, :none].inject(NIIF_INFO) do |icon, which|
       if instance_variable_get("@#{which}").checked?
+        # NIIF_xxxx is available icons for balloon
         VRTrayiconFeasible.const_get("NIIF_#{which.to_s.upcase}")
       else
         icon
@@ -65,3 +67,5 @@ frm.extend(VRVertLayoutManager)
 frm.move(100, 100, 300, 200)
 frm.create.show
 VRLocalScreen.messageloop
+
+# see \vr\contrib\vrtrayballoon.rb for a more complete list of icons/messages 

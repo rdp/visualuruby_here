@@ -1,12 +1,14 @@
 require 'vr/vrcontrol'
 require 'vr/vrtray'
 
+# MyForm: one form with (up to many) tray icons associated with it
 
 class MyForm < VRForm
   include VRTrayiconFeasible
   include VRMenuUseable
+  # load icons
   LoadIcon = Win32API.new("user32","LoadIcon","II","I")
-  QUESTIONICON= LoadIcon.call(0,32514)
+  QUESTIONICON = LoadIcon.call(0,32514)
   EXCLAMATIONICON = LoadIcon.call(0,32515)
 
   def construct
@@ -17,6 +19,8 @@ class MyForm < VRForm
     addControl VRButton,"btn3","mod",5,65,100,30
     addControl VRButton,"btn4","to tray",5,95,100,30
     move 100,100,120,160
+
+    # create the "when you right click on icon in the tray" bottom right menu
 
     @iconmenu = newPopupMenu
     @iconmenu.set([
