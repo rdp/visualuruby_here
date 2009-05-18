@@ -1,0 +1,11 @@
+== How to install
++ make swin.so
+You are required to prepare the source of ruby interpreter itself and
+make it to configure some C headers and some installer scripts.
+
+To create and install swin.so,
+  cd swin
+  ruby extconf.rb
+  make clean
+  make
+  make install
