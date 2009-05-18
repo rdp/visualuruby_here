@@ -29,7 +29,7 @@ module VRTrayiconFeasible
   # this method allows you to create a tray tip balloon for an tray icon
   # appears that tray tip balloons can only have one of a few icons associated (NIIF_xxx)
   # hicon?? 
-  # not sure what infotimeout should do--currently appears to have no effect
+  # infotimeout seems to be timeout--apparently valid is between 10 and 20s [http://www.tech-archive.net/Archive/DotNet/microsoft.public.dotnet.framework/2009-03/msg00160.html]
   # iconid is the [internal] icon number--see vrtray.rb
   def modify_trayicon5(hicon,infotitle,infotext,infoicon=NIIF_NONE,
                        infotimeout=20000,iconid=0)
