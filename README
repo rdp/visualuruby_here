@@ -1,23 +1,24 @@
 This is a fork of the visualuruby project http://www.osk.3web.ne.jp/~nyasu/vruby/vrproject-e.html
 
 Note: WINDOWS ONLY :)
+Note: 1.9 only
 
-The release is split into two parts:
+The project is split into two parts:
+
 the binary "backend" (vrswin)
 and a front "wrapper" for it. (vruby)
 
+To install it, it appears you'll need ruby 1.9 (use an older version for 1.8.x), then go into vrwsin/swin, ruby extconf.rb, make, make install
 
-To install it, it appears you'll need ruby 1.9, then go into vrwsin/swin, ruby extconf.rb, make, make install
 (how to install ruby 1.9 windows mingw: http://programming-gone-awry.blogspot.com/2009/05/ruby-19-one-click-installer.html)
 
-with ruby 1.8.6 you might be able to download previous version of vrswin and it will install.
 
-for vruby, you'll need to copy that lib folder over by hand. 
-
-simple examples:
-http://www.osk.3web.ne.jp/~nyasu/vruby/vrproject-e.html#sss
+for vruby, run vruby080229>ruby vrinstall.rb
 
 
-Note:  For ruby 1.9, you'll want to have at most one thread for GUI stuffs and (possibly others for non GUI) to avoid potential deadlocks.
+== examples == 
+see examples folder, and also http://www.osk.3web.ne.jp/~nyasu/vruby/vrproject-e.html#sss
+
+Note:  For ruby 1.9 (the default), you'll want to have at most one thread for GUI stuffs and (possibly others for non GUI) to avoid potential deadlocks.
 
 comments send to rogerdpack user on github
