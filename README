@@ -17,4 +17,7 @@ for vruby, you'll need to copy that lib folder over by hand.
 simple examples:
 http://www.osk.3web.ne.jp/~nyasu/vruby/vrproject-e.html#sss
 
+
+Note:  For ruby 1.9, you'll want to have at most one thread for GUI stuffs and (possibly others for non GUI) to avoid potential deadlocks.
+
 comments send to rogerdpack user on github
