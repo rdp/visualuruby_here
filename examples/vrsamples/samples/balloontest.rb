@@ -38,7 +38,7 @@ module MyForm
   end
 
   def self_trayballoontimeout iconid
-    puts 'Balloon timed out or user dismissed it!'
+    puts 'Balloon timed out or user dismissed it or it was replaced by a new balloon!'
   end
 
   def self_trayballoonclicked iconid
