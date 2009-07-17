@@ -13,6 +13,7 @@ require VR_DIR+'vruby'
 module VRTrayiconFeasible
   +  NIF_INFO    = 16   # Shell32.dll version 5.0 (Win2000/Me and later)
   # Tooltip balloon icon flags (are these the only possible?)
+  # see http://msdn.microsoft.com/en-us/library/bb773352(VS.85).aspx
   NIIF_NONE    = 0
   NIIF_INFO    = 1
   NIIF_WARNING = 2
@@ -26,11 +27,12 @@ module VRTrayiconFeasible
   NIN_BALLOONTIMEOUT   = WMsg::WM_USER + 4
   NIN_BALLOONUSERCLICK = WMsg::WM_USER + 5
 
-  # this method allows you to create a tray tip balloon for an tray icon
-  # appears that tray tip balloons can only have one of a few icons associated (NIIF_xxx)
-  # hicon?? 
-  # infotimeout seems to be timeout--apparently valid is between 10 and 20s [http://www.tech-archive.net/Archive/DotNet/microsoft.public.dotnet.framework/2009-03/msg00160.html]
-  # iconid is the [internal] icon number--see vrtray.rb
+  # this method allows you to create a tray tip balloon for a tray icon
+  # infoicon: appears that tray tip balloons can only have one of a few icons associated (NIIF_xxx)
+  # hicon is if you [also] want to change the icon--see modify_trayicon
+  # infotimeout--apparently valid is between 10 and 20 (s) [http://www.tech-archive.net/Archive/DotNet/microsoft.public.dotnet.framework/2009-03/msg00160.html]
+  # iconid is the [internal] icon number--see vrtray.rb for explanation
+  #
   def modify_trayicon5(hicon,infotitle,infotext,infoicon=NIIF_NONE,
                        infotimeout=20000,iconid=0)
     flag = NIF_INFO
